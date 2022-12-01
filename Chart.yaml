@@ -1,0 +1,11 @@
+---
+apiVersion: v2
+name: webstore-demo-gitops
+type: application
+version: 0.0.1
+appVersion: "0.2.1"
+dependencies:
+- name: openinsight
+  version: 0.2.1
+  repository: https://openinsight-proj.github.io/openinsight-helm-charts
+  condition: openinsight.enabled
