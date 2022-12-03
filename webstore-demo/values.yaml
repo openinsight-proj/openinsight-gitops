@@ -36,4 +36,4 @@ opentelemetry-demo:
   opentelemetry-demo:
     components:
       adService:
-        enabled: false
+        enabled: true
