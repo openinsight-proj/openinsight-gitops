@@ -4,4 +4,4 @@ This repo demonstrates how an OTS (off-the-shelf) helm chart can be retrieved an
 
 More information can be found at <https://github.com/argoproj/argocd-example-apps/tree/master/helm-dependency>
 
-We referenced a chart from [openinsight-proj/openinsight-helm-charts](https://github.com/openinsight-proj/openinsight-helm-charts/tree/main/charts/openinsight)，which create an observability analytics platform named `webstore`.
+We referenced charts from [openinsight-proj/openinsight-helm-charts](https://github.com/openinsight-proj/openinsight-helm-charts).
