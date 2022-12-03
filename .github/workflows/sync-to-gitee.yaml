@@ -1,0 +1,24 @@
+name: Sync to gitee
+
+on:
+  push:
+    branches:
+      - main
+    tags: ["v*"]
+
+env:
+  GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync
+        uses: Yikun/hub-mirror-action@master
+        with:
+          src: github/openinsight-proj
+          dst: gitee/OpenInsight
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+          dst_token: ${{ secrets.GITEE_TOKEN }}
+          static_list: "openinsight-gitops"
+          force_update: true
