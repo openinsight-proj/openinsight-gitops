@@ -5,3 +5,5 @@ This repo demonstrates how an OTS (off-the-shelf) helm chart can be retrieved an
 More information can be found at <https://github.com/argoproj/argocd-example-apps/tree/master/helm-dependency>
 
 We referenced charts from [openinsight-proj/openinsight-helm-charts](https://github.com/openinsight-proj/openinsight-helm-charts).
+
+This repo will auto sync to [gitee.com/OpenInsight/openinsight-gitops](https://gitee.com/OpenInsight/openinsight-gitops).
