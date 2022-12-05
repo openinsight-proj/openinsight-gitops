@@ -1,2 +1,5 @@
 openinsight:
   enabled: true
+  clickhouse:
+    service:
+      type: NodePort
