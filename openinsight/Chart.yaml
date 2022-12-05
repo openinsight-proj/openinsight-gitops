@@ -6,6 +6,6 @@ version: 0.0.1
 appVersion: "0.2.1"
 dependencies:
 - name: openinsight
-  version: 0.2.1
+  version: 0.2.5
   repository: https://openinsight-proj.github.io/openinsight-helm-charts
   condition: openinsight.enabled
