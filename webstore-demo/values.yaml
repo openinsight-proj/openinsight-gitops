@@ -217,7 +217,7 @@ opentelemetry-demo:
       config:
         exporters:
           otlp:
-            endpoint: 'openinsight.openinsight-gitopts.svc.cluster.local:4317'
+            endpoint: 'openinsight.openinsight-gitops.svc.cluster.local:4317'
 
   redis_operator:
     enabled: false
