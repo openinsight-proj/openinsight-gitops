@@ -381,9 +381,16 @@ openinsight:
       metrics:
         # The metrics port is disabled by default. However you need to enable the port
         # in order to use the ServiceMonitor (serviceMonitor.enabled) or PodMonitor (podMonitor.enabled).
-        enabled: false
+        enabled: true
         containerPort: 8888
         servicePort: 8888
+        protocol: TCP
+      span-metrics:
+        # The metrics port is disabled by default. However you need to enable the port
+        # in order to use the ServiceMonitor (serviceMonitor.enabled) or PodMonitor (podMonitor.enabled).
+        enabled: true
+        containerPort: 8999
+        servicePort: 8999
         protocol: TCP
       fluent-forward:
         enabled: true
