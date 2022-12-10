@@ -55,7 +55,7 @@ opentelemetry-demo:
       redis:
         enabled: true
         useDefault:
-          env: false
+          env: true
 
         # Options to override the default image settings.
         imageOverride:
@@ -65,7 +65,7 @@ opentelemetry-demo:
       adService:
         enabled: true
         useDefault:
-          env: false
+          env: true
         imageOverride:
           repository: ghcr.io/openinsight-proj/adservice
           tag: "v0.4.6"
@@ -111,35 +111,35 @@ opentelemetry-demo:
       checkoutService:
         enabled: true
         useDefault:
-          env: false
+          env: true
         podAnnotations:
           instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
 
       currencyService:
         enabled: true
         useDefault:
-          env: false
+          env: true
         podAnnotations:
           instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
 
       emailService:
         enabled: true
         useDefault:
-          env: false
+          env: true
         podAnnotations:
           instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
 
       featureflagService:
         enabled: true
         useDefault:
-          env: false
+          env: true
         podAnnotations:
           instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
 
       ffsPostgres:
         enabled: true
         useDefault:
-          env: false
+          env: true
         imageOverride:
           repository: "docker.m.daocloud.io/postgres"
         podAnnotations:
@@ -148,14 +148,14 @@ opentelemetry-demo:
       frontend:
         enabled: true
         useDefault:
-          env: false
+          env: true
         podAnnotations:
           instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
 
       frontendProxy:
         enabled: true
         useDefault:
-          env: false
+          env: true
         resources:
           limits:
             memory: 100Mi
@@ -165,42 +165,42 @@ opentelemetry-demo:
       loadgenerator:
         enabled: true
         useDefault:
-          env: false
+          env: true
         podAnnotations:
           instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
 
       paymentService:
         enabled: true
         useDefault:
-          env: false
+          env: true
         podAnnotations:
           instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
 
       productCatalogService:
         enabled: true
         useDefault:
-          env: false
+          env: true
         podAnnotations:
           instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
 
       recommendationService:
         enabled: true
         useDefault:
-          env: false
+          env: true
         podAnnotations:
           instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
 
       shippingService:
         enabled: true
         useDefault:
-          env: false
+          env: true
         podAnnotations:
           instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
 
       quoteService:
         enabled: true
         useDefault:
-          env: false
+          env: true
         podAnnotations:
           instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
 
