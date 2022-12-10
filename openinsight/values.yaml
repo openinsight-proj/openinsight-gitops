@@ -14,11 +14,11 @@ openinsight:
     replicaCount: 1
     resources:
       requests:
-        cpu: 1000m
-        memory: 1024Mi
+        cpu: 4
+        memory: 4Gi
       limits:
-        cpu: 2000m
-        memory: 2048Mi
+        cpu: 8
+        memory: 8Gi
     auth:
       username: default
       password: "changeme"
@@ -226,6 +226,9 @@ openinsight:
             storage_type: clickhouse
       processors:
         batch: {}
+        batch/clickhouse:
+          send_batch_size: 30000
+          timeout: 10s
         # If set to null, will be overridden with values based on k8s resource limits
         memory_limiter: null
         spanmetrics:
@@ -257,7 +260,7 @@ openinsight:
         prometheus:
           config:
             scrape_configs:
-              - job_name: opentelemetry-collector
+              - job_name: openinsight-collector
                 scrape_interval: 5s
                 static_configs:
                   - targets:
@@ -278,6 +281,8 @@ openinsight:
           endpoint: 0.0.0.0:8006
       service:
         telemetry:
+          logs:
+            level: info
           metrics:
             address: 0.0.0.0:8888
         extensions:
@@ -285,13 +290,13 @@ openinsight:
           - query
           - health_check
         pipelines:
-          logs:
+          logs/ck:
             exporters:
               - logging
               - clickhouse
             processors:
               - memory_limiter
-              - batch
+              - batch/clickhouse
             receivers:
               - otlp
               - fluentforward
@@ -306,7 +311,7 @@ openinsight:
               - clickhouse
             processors:
               - memory_limiter
-              - batch
+              - batch/clickhouse
             receivers:
               - otlp
               - prometheus
@@ -318,11 +323,12 @@ openinsight:
               - memory_limiter
               - servicegraph
               - spanmetrics
-              - batch
+              - batch/clickhouse
             receivers:
               - otlp
               - jaeger
               - zipkin
+
     ports:
       query-http:
         enabled: true
