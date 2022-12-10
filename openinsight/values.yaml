@@ -269,7 +269,7 @@ openinsight:
                 scrape_interval: 5s
                 static_configs:
                   - targets:
-                      - ${MY_POD_IP}:8999
+                      - ${MY_POD_IP}:8889
         # Dummy receiver that's never used, because a pipeline is required to have one.
         otlp/otel_metrics:
           protocols:
@@ -389,8 +389,8 @@ openinsight:
         # The metrics port is disabled by default. However you need to enable the port
         # in order to use the ServiceMonitor (serviceMonitor.enabled) or PodMonitor (podMonitor.enabled).
         enabled: true
-        containerPort: 8999
-        servicePort: 8999
+        containerPort: 8889
+        servicePort: 8889
         protocol: TCP
       fluent-forward:
         enabled: true
