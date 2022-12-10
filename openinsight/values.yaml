@@ -9,15 +9,15 @@ openinsight:
       type: NodePort
     zookeeper:
       enabled: true
-      replicaCount: 5
+      replicaCount: 1
     shards: 1
     replicaCount: 1
     resources:
       requests:
-        cpu: 4
+        cpu: 2
         memory: 4Gi
       limits:
-        cpu: 8
+        cpu: 4
         memory: 8Gi
     auth:
       username: default
